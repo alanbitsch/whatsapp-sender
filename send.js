@@ -8,12 +8,14 @@ async function connectWhatsapp() {
     conn.loadAuthInfo("./auth_info.json");
     await conn.connect();
     for (let file of fileList) {
+        console.log(`\nSending: ${file}\n`);
         await conn.sendMessage(id,
             fs.readFileSync(dir+file),
             MessageType.document,
             { mimetype: "application/octet-stream",
             filename: file},
         )
+        console.log(`\nSent: ${file}\n`);
     }
 };
 

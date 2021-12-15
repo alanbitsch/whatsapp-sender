@@ -8,7 +8,9 @@ async function connectToWhatsApp() {
             "auth_info.json",
             JSON.stringify(authInfo, null, "\t")
         );
+        console.log("\nCredentials saved on auth_info.json\n");
     });
     await conn.connect();
+    conn.close();
 }
 connectToWhatsApp().catch((err) => console.log("unexpected error: " + err));
