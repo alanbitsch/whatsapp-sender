@@ -1,14 +1,15 @@
 const { WAConnection, MessageType, MessageOptions, Mimetype } = require("@adiwajshing/baileys");
 const fs = require("fs");
 const id = `${process.argv[3]}@s.whatsapp.net`;
-const fileList = fs.readdirSync(process.argv[2]);
+const dir = process.argv[2];
+const fileList = fs.readdirSync(dir);
 async function connectWhatsapp() {
     const conn = new WAConnection();
     conn.loadAuthInfo("./auth_info.json");
     await conn.connect();
     for (let file of fileList) {
         await conn.sendMessage(id,
-            fs.readFileSync(`test/${file}`),
+            fs.readFileSync(dir+file),
             MessageType.document,
             { mimetype: "application/octet-stream",
             filename: file},
