@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auth": "node auth.js"
   },
-  "author": "",
+  "author": "Alan Bitsch",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.3",
-    "sharp": "^0.29.3"
+    "@adiwajshing/baileys": "^3.5.3"
   }
 }
